@@ -17,7 +17,14 @@ while not turn_off:
         coffee_project_money_machine.report()
     else:
         want_drink = coffee_project_menu.find_drink(what_to_do)
+<<<<<<< HEAD
         if want_drink:
             if coffee_project_coffee_maker.is_resource_sufficient(want_drink):
                 if coffee_project_money_machine.make_payment(want_drink.cost):
                     coffee_project_coffee_maker.make_coffee(want_drink)
+=======
+        if coffee_project_coffee_maker.is_resource_sufficient(want_drink):
+            enough_paid = coffee_project_money_machine.make_payment(want_drink.cost)
+            if enough_paid:
+                coffee_project_coffee_maker.make_coffee(want_drink)
+>>>>>>> 5aac2abcf47640fd980454510a456a825fa786f9
