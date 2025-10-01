@@ -1,20 +1,22 @@
 from turtle import Turtle, Screen
 import random
+import colorgram
 
-def random_color():
-    r = random.randint(0,255)
-    g = random.randint(0,255)
-    b = random.randint(0,255)
-    return r,g,b
 
-screen = Screen()
-xander = Turtle()
-xander.shape("turtle")
-xander.color("blue")
-xander.shapesize(1.5,1.5,3)
-xander.fillcolor("skyblue")
-xander.speed("fastest")
-screen.colormode(255)
+# def random_color():
+#     r = random.randint(0,255)
+#     g = random.randint(0,255)
+#     b = random.randint(0,255)
+#     return r,g,b
+#
+# screen = Screen()
+# xander = Turtle()
+# xander.shape("turtle")
+# xander.color("blue")
+# xander.shapesize(1.5,1.5,3)
+# xander.fillcolor("skyblue")
+# xander.speed("fastest")
+# screen.colormode(255)
 
 #Challenge 1 - Drawing a square
 # for x in range(4):
@@ -70,9 +72,12 @@ screen.colormode(255)
 
 # Main Challenge: Damien Hirst Painting
 
+colors = colorgram.extract("image.jpg", 10)
+print(colors)
 
+color = colorgram.Color()
 
-
+print(color)
 
 
 
