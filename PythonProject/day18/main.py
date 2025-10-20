@@ -3,20 +3,20 @@ import random
 import colorgram
 
 
-# def random_color():
-#     r = random.randint(0,255)
-#     g = random.randint(0,255)
-#     b = random.randint(0,255)
-#     return r,g,b
-#
-# screen = Screen()
-# xander = Turtle()
-# xander.shape("turtle")
-# xander.color("blue")
-# xander.shapesize(1.5,1.5,3)
-# xander.fillcolor("skyblue")
-# xander.speed("fastest")
-# screen.colormode(255)
+def random_color():
+    r = random.randint(0,255)
+    g = random.randint(0,255)
+    b = random.randint(0,255)
+    return r,g,b
+dots = int(input("How many dots per side? Kindly input an odd number. \n"))
+screen = Screen()
+xander = Turtle()
+xander.shape("turtle")
+xander.color("blue")
+xander.shapesize(1.5,1.5,3)
+xander.fillcolor("skyblue")
+xander.speed("fastest")
+screen.colormode(255)
 
 #Challenge 1 - Drawing a square
 # for x in range(4):
@@ -29,6 +29,7 @@ import colorgram
 # joms.color("white")
 # joms.forward(10)
 # joms.pensize(1)
+
 
 # Random drawing
 # t = Turtle()
@@ -71,13 +72,34 @@ import colorgram
 #     xander.color(random_color())
 
 # Main Challenge: Damien Hirst Painting
-
-colors = colorgram.extract("image.jpg", 10)
+rgbcolors = []
+colors = colorgram.extract("image.jpg", 30)
 print(colors)
+for color in colors:
+    r = color.rgb.r
+    g = color.rgb.g
+    b = color.rgb.b
+    rgbcolors.append((r,g,b))
 
-color = colorgram.Color()
+print(rgbcolors)
+xander.penup()
+xander.hideturtle()
+xander.setposition(-(dots * 50 - 50) / 2,-(dots * 50 - 50) / 2)
+for y in range(dots):
+    for x in range(dots):
+        xander.dot(20,random.choice(rgbcolors))
+        xander.forward(50)
+    # face up , forward, face left, forward 50*dots, face right
+    xander.right(270)
+    xander.forward(50)
+    xander.right(270)
+    xander.forward(dots*50)
+    xander.right(180)
+xander.home()
 
-print(color)
+# color = colorgram.Color()
+
+# print(color)
 
 
 
