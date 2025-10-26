@@ -40,7 +40,7 @@ while game_is_on:
         game_is_on = False
 
     # Checking whether the turtle collides with its tail
-    for seg in xander.segments[1:]:
+    for seg in xander.segments[3:]:
         if xander.segments[0].distance(seg) < 15:
             game_is_on = False
 
